@@ -15,6 +15,7 @@ class HomeControllers {
            
             const title = 'AgaDiDevin'
             let getDay = day.getDay()
+            console.log(getDay)
             let currday = ''
             switch (getDay) {
                 case 0: currday = 'Minggu'
@@ -34,8 +35,9 @@ class HomeControllers {
                 default:
                     console.log('wow ')
             }
+            console.log(currday, 'curr day')
            
-            res.render('index', {data: title, date: currday})
+            res.render('index', {data: title, hari: currday})
         }
         catch{
             res.status(500).send('<h1>Error Server 500</h1>')

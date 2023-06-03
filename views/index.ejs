@@ -95,17 +95,17 @@
           <div class="col-lg-5">
             <form action="/contactus" class="sign-up-form d-flex" method="POST" data-aos="fade-up" data-aos-delay="300">
               <input id="email" name="email" type="text" class="form-control" placeholder="Enter email address">
-            <% if (date == "Sabtu" || date == "Minggu") { %>
+            <% if (hari == "Sabtu" || hari == "Minggu") { %>
               <input type="submit" class="btn btn-danger" disabled="true" value="Subcribe">
             <% } else { %>
                 <input type="submit" class="btn btn-primary" value="Subcribe">
             <% } %>
             </form>
           </div>
-          <% if (date == "Sabtu" || date == "Minggu") { %>
-          <p style="color:red"><%= date %> ( off / close )</p>
+          <% if (hari == "Sabtu" || hari == "Minggu") { %>
+          <p style="color:red"><%= hari %> ( off / close )</p>
           <% } else { %>
-          <p style="color:white"><%= date %> ( open )</p>
+          <p style="color:white"><%= hari %> ( open )</p>
          <% } %>
         </div>
       </div>

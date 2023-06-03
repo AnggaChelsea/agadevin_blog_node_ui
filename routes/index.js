@@ -4,5 +4,6 @@ const adminRouter = require('./admin')
 const homeRouter = require('./home')
 
 router.use('/admin', adminRouter)
+router.use('/', homeRouter)
 
 module.exports = router

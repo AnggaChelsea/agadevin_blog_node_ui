@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/home/.*",
+        "dest": "/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ]
+  }

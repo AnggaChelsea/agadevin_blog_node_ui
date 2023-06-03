@@ -10,12 +10,12 @@ app.set('views', 'views')
 app.use(bodyParser.urlencoded())
 app.use(router)
 app.use(express.static('public'))
-// app.use((req, res, next) => {
-//     res.status(404).send('<h1>Page Not Found</h1>')
-// })
-router.get('/', (req, res, next) => {
-    res.sendFile(path.join(rootDir, 'views', 'index.html'))
+app.use((req, res, next) => {
+    res.status(404).render('page_not_found')
 })
+// router.get('/', (req, res, next) => {
+//     res.render('index', {index: true})
+// })
 
 app.listen(3000, () => {
     console.log('port listen localhost:3000')

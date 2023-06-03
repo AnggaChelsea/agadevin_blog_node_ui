@@ -3,10 +3,17 @@ const axios = require('axios');
 class HomeControllers {
     static async getHome(req, res) {
         try{
-            const resData = await axios.get('https://agadevin-e4ac9-default-rtdb.firebaseio.com/add-project.json')
-            const resultData = resData.data
-            const title = 'AgaDiDevin'
             const day = new Date()
+
+            const option = {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long'
+            }
+            var dayconvert = day.toLocaleDateString("en-US", option)
+
+           
+            const title = 'AgaDiDevin'
             let getDay = day.getDay()
             let currday = ''
             switch (getDay) {
@@ -27,16 +34,17 @@ class HomeControllers {
                 default:
                     console.log('wow ')
             }
-            console.log(resultData)
-            const arr = []
-            for(key in resultData ){
-                arr.push(resultData[key])
-            }
-            res.render('index', {data: title, date: currday, dataCard: resultData})
+           
+            res.render('index', {data: title, date: currday})
         }
         catch{
             res.status(500).send('<h1>Error Server 500</h1>')
         }
     }
+
+   static async addSubsribe(req, res){
+    const bodyUrl = req.body.email;
+    console.log(bodyUrl)
+   }
 }
 module.exports = HomeControllers

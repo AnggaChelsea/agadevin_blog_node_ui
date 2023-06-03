@@ -162,22 +162,22 @@
 
           <div class="col-xl-7">
             <div class="row gy-4 icon-boxes">
-
+              <% for (let i = 0 ; i<dataCard.length; i++) { %> 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                 <div class="icon-box">
                   <i class="bi bi-buildings"></i>
-                  <h3>Who We Are</h3>
+                  <h3><%= dataCard[i].description %></h3>
                   <p>We are a team of tech enthusiasts, innovators, and problem solvers. With a deep understanding of the latest technological trends, we specialize in developing custom solutions that leverage the full potential of modern technology</p>
                 </div>
-              </div> <!-- End Icon Box -->
-
+              </div> 
+              <% } %>
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box">
                   <i class="bi bi-clipboard-pulse"></i>
                   <h3>Our Expertise</h3>
                   <p>we stay at the forefront of emerging technologies. Our team of skilled professionals combines their expertise with a deep industry knowledge to deliver tailored solutions that align with your unique business requirements.</p>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div> 
 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
@@ -185,7 +185,7 @@
                   <h3>What Sets Us Apart</h3>
                   <p>Affordable Solutions: We understand the importance of cost-effectiveness in today's competitive business landscape. Our commitment to providing affordable solutions sets us apart from the rest. We offer competitive pricing without compromising on quality, ensuring that our clients receive excellent value for their investment.</p>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div> 
 
               <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
@@ -193,7 +193,7 @@
                   <h3>Why Choose Us:</h3>
                   <p>Proven Track Record: We have a successful track record of delivering transformative technology solutions to clients across various industries</p>
                 </div>
-              </div> <!-- End Icon Box -->
+              </div> 
 
             </div>
           </div>

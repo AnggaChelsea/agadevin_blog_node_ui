@@ -16,6 +16,11 @@ app.use(express.static('public'))
 router.get('/', (req, res, next) => {
     res.sendFile(path.join(rootDir, 'views', 'index.html'))
 })
+app.get('/tes', (req, res) => {
+    const day = new Date()
+    res.render('list', {data: day})
+})
+
 
 app.listen(3000, () => {
     console.log('port listen localhost:3000')

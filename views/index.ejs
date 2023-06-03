@@ -36,7 +36,7 @@
 
       <a class="logo d-flex align-items-center me-auto me-xl-0" href="index.html">
 
-        <h1>Agadidevin</h1>
+        <h1><%= data %></h1>
         <span>.</span>
       </a>
 
@@ -95,9 +95,18 @@
           <div class="col-lg-5">
             <form action="/contactus" class="sign-up-form d-flex" method="POST" data-aos="fade-up" data-aos-delay="300">
               <input id="email" name="email" type="text" class="form-control" placeholder="Enter email address">
-              <input type="submit" class="btn btn-primary" value="Subcribe">
+            <% if (date == "Sabtu" || date == "Minggu") { %>
+              <input type="submit" class="btn btn-danger" disabled="true" value="Subcribe">
+            <% } else { %>
+                <input type="submit" class="btn btn-primary" value="Subcribe">
+            <% } %>
             </form>
           </div>
+          <% if (date == "Sabtu" || date == "Minggu") { %>
+          <p style="color:red"><%= date %> ( off / close )</p>
+          <% } else { %>
+          <p style="color:white"><%= date %> ( open )</p>
+         <% } %>
         </div>
       </div>
 

@@ -12,7 +12,7 @@ class HomeControllers {
             }
             var dayconvert = day.toLocaleDateString("en-US", option)
 
-           
+           var items = []
             const title = 'AgaDiDevin'
             let getDay = day.getDay()
             console.log(getDay)
@@ -36,8 +36,9 @@ class HomeControllers {
                     console.log('wow ')
             }
             console.log(currday, 'curr day')
+            console.log(items,' items')
            
-            res.render('index', {data: title, hari: currday})
+            res.render('index', {data: title, hari: currday, list:items})
         }
         catch{
             res.status(500).send('<h1>Error Server 500</h1>')
@@ -45,8 +46,13 @@ class HomeControllers {
     }
 
    static async addSubsribe(req, res){
-    const bodyUrl = req.body.email;
-    console.log(bodyUrl)
+    const item = req.body.email;
+    console.log(item)
+    if(item){
+        // alert('success')
+        res.redirect("/")
+    }
+
    }
 }
 module.exports = HomeControllers

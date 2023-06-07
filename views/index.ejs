@@ -92,22 +92,11 @@
               We are a passionate and dedicated team within a software development company. We specialize in creating innovative websites and mobile applications using the latest technologies.
             </p>
           </div>
+          <strong style="color: red;">Welcome <%= email %></strong>
           <div class="col-lg-5">
-            <%= list %>
-            <form action="/" class="sign-up-form d-flex" method="POST" data-aos="fade-up" data-aos-delay="300">
-              <input id="email" name="email" type="text" class="form-control" placeholder="Enter email address">
-            <% if (hari == "Sabtu" || hari == "Minggu") { %>
-              <button type="submit" class="btn btn-danger" >Submit</button>
-            <% } else { %>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            <% } %>
-            </form>
-          </div>
-          <% if (hari == "Sabtu" || hari == "Minggu") { %>
-          <p style="color:red"><%= hari %> ( off / close )</p>
-          <% } else { %>
-          <p style="color:white"><%= hari %> ( open )</p>
-         <% } %>
+         
+         <button type="submit" class="btn btn-primary">Submit</button>
+
         </div>
       </div>
 

@@ -5,6 +5,7 @@ const router = require('./routes/index')
 const rootDir = require('./helpers/path')
 const mongooseConnect = require('./config/db/mongo_connect')
 const port = 3000
+const expressLayout = require('express-ejs-layouts')
 
 const app = express()
 app.set('view engine', 'ejs');
@@ -15,6 +16,7 @@ app.use(express.static('public'))
 app.use((req, res, next) => {
     res.status(404).render('page_not_found')
 })
+app.use(expressLayout)
 // app.use(mongooseConnect())
 // router.get('/', (req, res, next) => {
 //     res.render('index', {index: true})

@@ -88,16 +88,18 @@
         <div class="row">
           <div class="col-lg-10">
             <h2 data-aos="fade-up" data-aos-delay="100">Welcome to AgaDiDevin</h2>
-            <p data-aos="fade-up" data-aos-delay="200"> <span style="font-weight: bold;">We are team of softwate house making websites or mobile app with any tech </span> <br>
-              We are a passionate and dedicated team within a software development company. We specialize in creating innovative websites and mobile applications using the latest technologies.
+            <p data-aos="fade-up" data-aos-delay="200">
+              Kami adalah tim yang bersemangat dan berdedikasi dalam Software House. Kami berspesialisasi dalam membuat situs web inovatif dan aplikasi seluler menggunakan teknologi terbaru
             </p>
           </div>
           <strong style="color: red;">Welcome <%= email %></strong>
           <div class="col-lg-5">
-         
-         <button type="submit" class="btn btn-primary">Submit</button>
-
-        </div>
+            <form action="/" class="sign-up-form d-flex" method="POST" data-aos="fade-up" data-aos-delay="300">
+              <input id="email" name="email" type="text" class="form-control" placeholder="Enter email address">
+           
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
       </div>
 
     </section><!-- End Hero Section -->

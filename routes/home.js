@@ -7,7 +7,7 @@ const middlewareHome = require('../middleware/response/reponse_home')
 
 router.get('/', homeController.getHome)
 
-router.post('/', middlewareHome, homeController.addSubsribe)
+router.post('/subcribe', middlewareHome, homeController.addSubsribe)
 
 
 module.exports = router

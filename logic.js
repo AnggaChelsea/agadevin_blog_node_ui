@@ -31,3 +31,6 @@ if (isSame) {
 } else {
   console.log("Elements in array1 and array2 are different");
 }
+
+const date = 
+console.log(date)

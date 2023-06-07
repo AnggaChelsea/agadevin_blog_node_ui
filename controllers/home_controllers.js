@@ -5,7 +5,6 @@ class HomeControllers {
         try {
             const dataDb = await SubscribeSchema.find()
             if (dataDb) {
-                console.log(dataDb)
                 const title = 'AgaDiDevin'
 
                 res.render('index', {
@@ -24,46 +23,39 @@ class HomeControllers {
             var dayconvert = day.toLocaleDateString("en-US", option)
 
             let items = []
-            // let getDay = day.getDay()
-            // console.log(getDay)
-            // let currday = ''
-            // switch (getDay) {
-            //     case 0: currday = 'Minggu'
-            //         break;
-            //     case 1: currday = 'Senin'
-            //         break;
-            //     case 2: currday = 'Selasa'
-            //         break;
-            //     case 3: currday = 'Rabu'
-            //         break;
-            //     case 4: currday = 'Kamis'
-            //         break;
-            //     case 5: currday = 'Jumat'
-            //         break;
-            //     case 6: currday = 'Sabtu'
-            //         break;
-            //     default:
-            //         console.log(items, 'wow bisa')
-            // }
-
         } catch {res.status(500).send('<h1>Error Server 500</h1>')}}
 
     static async addSubsribe(req, res, next) {
         const email = req.body.email
-        try {
-            const data = await SubscribeSchema.create({email: email})
-            data.save()
-            // res.locals.customStatus = {message: 200}
-            // res.locals.customMessage = {message: 'success subscribe thank u'}
-            const response = {
-                status: 200,
-                message: 'success subscribe thank u'
+    //    const getRes = document.getElementById('alertMessage')
+        console.log(email)
+        try { // Check if email already exists in the database
+            const existingSubscribe = await SubscribeSchema.findOne({email});
+            if (existingSubscribe) { // If email exists, send an alert message
+                const statusError = true
+                res.render('index', {
+                    error : statusError
+                })
+            } else { // If email does not exist, create a new entry
+                const subscribe = await SubscribeSchema.create({email});
+                console.log(subscribe);
+                const response = {
+                    status: 200,
+                    message: 'Success subscribe, thank you!'
+                }
+                if (response.status === 200) {
+
+                  }
+                res.status(200).json(response);
             }
-            items.push({
-                ... response
-            })
-            next()
-            res.redirect("/")
-        } catch {res.status(500).send('<h1>Error Server 500</h1>')}}
+        } catch (error) {
+            const response = {
+                status: 500,
+                message: 'Internal Server Error'
+            }
+            console.error('Error:', error);
+            res.status(500).send(response);
+        }
+    }
 }
 module.exports = HomeControllers

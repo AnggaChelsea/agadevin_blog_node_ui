@@ -36,11 +36,13 @@
           </tr>
         </thead>
         <tbody>
+          <% for (let index of adminData) {%>
           <tr>
             <th scope="row">1</th>
-            <td>Larry</td>
-            <td>the Bird</td>
+            <td><%= index.email %>/td>
+            <td><%= new Date(index.createdAt) %></td>
           </tr>
+          <% } %>
         </tbody>
       </table>
 </body>

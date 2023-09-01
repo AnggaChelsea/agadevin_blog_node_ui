@@ -6,7 +6,7 @@ class HomeControllers {
             const dataDb = await SubscribeSchema.find()
             if (dataDb) {
                 console.log(dataDb)
-                const title = 'AgaDiDevin'
+                const title = 'Agasadev'
 
                 res.render('index', {
                     data: title,
